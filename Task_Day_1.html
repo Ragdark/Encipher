@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        /* HIDDEN PAGE */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* VISIBLE PAGE */
+        .active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffffdd;
+            color: black;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 650px;
+            background: rgba(0, 0, 0, 0.50);
+            padding: 30px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body onload="welcomePopup()">
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <div class="container">
+            <h1>Welcome to My Web Page</h1>
+            <p><strong>Name:</strong> Raghul Krishna.K</p>
+            <p><strong>Email:</strong> ragdark899@gmail.com</p>
+            <p><strong>City:</strong> Tirupur</p>
+
+            <button onclick="showPage('aboutPage')">About Me</button>
+            <button onclick="showPage('whyHTMLPage')">Why Do I Want to Learn HTML?</button>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="aboutPage" class="page">
+        <div class="container">
+            <h1>About Me</h1>
+            <p>Hello! My name is Raghul Krishna. I enjoy learning about technology and exploring new ideas. 
+                I am passionate about creating websites and learning new digital skills.</p>
+
+            <button onclick="showPage('homePage')">Back</button>
+        </div>
+    </div>
+
+    <!-- WHY HTML PAGE -->
+    <div id="whyHTMLPage" class="page">
+        <div class="container">
+            <h1>Why Do I Want to Learn HTML?</h1>
+
+            <p>HTML is the foundation of all websites. It allows me to understand how web pages are built and structured. Learning HTML helps me create and manage digital content effectively.</p>
+
+            <p>By learning HTML, I can design my own websites and experiment with different layouts. It helps me express my creativity and gives me the freedom to build what I imagine.</p>
+
+            <p>HTML is also important for learning more advanced technologies like CSS and JavaScript. It is the first step toward becoming a skilled web developer and understanding modern web design.</p>
+
+            <button onclick="showPage('homePage')">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function welcomePopup() {
+            alert("Welcome to my web page!");
+        }
+
+        function showPage(pageId) {
+            // Hide all pages
+            let pages = document.querySelectorAll(".page");
+            pages.forEach(page => page.classList.remove("active"));
+
+            // Show selected page
+            document.getElementById(pageId).classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
