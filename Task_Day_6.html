@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Day 6 - Basic Tables</title>
+</head>
+<body>
+    <h2>STUDENT DATA</h2>
+    <table border="1">
+        <tr>
+            <thead>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Marks</th>
+            </thead>
+        </tr>
+        <tbody>
+            <tr>
+                <td>Raghul Krishna</td>
+                <td>201</td>
+                <td>92</td>
+            </tr>
+            <tr>
+                <td>Meera</td>
+                <td>202</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td>Sai Kumar</td>
+                <td>203</td>
+                <td>79</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2>Table with header</h2>
+    <table border="1">
+        <tr>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </thead>
+        </tr>
+        <tr>
+            <td>Anitha</td>
+            <td>24</td>
+            <td>Coimbatore</td>
+        </tr>
+        <tr>
+            <td>Pranav</td>
+            <td>22</td>
+            <td>Madurai</td>
+        </tr>
+        <tr>
+            <td>Leela</td>
+            <td>23</td>
+            <td>Salem</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Product list</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Basic Calculator</td>
+            <td>₹300</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Notebooks (Set)</td>
+            <td>₹150</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Pen (Blue)</td>
+            <td>₹10</td>
+            <td>100</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Table with colspan and rowspan</h2>
+    <table border="1">
+        <tr>
+            <th>Computer Name</th>
+            <th>RAM</th>
+            <th>Storage</th>
+        </tr>
+        <tr>
+            <td>HP</td>
+            <td colspan="2">8GB RAM, 256GB SSD</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Dell</td>
+            <td>16GB</td>
+            <td>512GB</td>
+        </tr>
+        <tr>
+            <td>8GB</td>
+            <td>1TB</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Product image, name and price (beginner html)</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+        </tr>
+        <tr>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Calculator_%28basic%29.svg" alt="Calculator" height="100" width="120"></td>
+            <td>Basic Calculator</td>
+            <td>₹300</td>
+        </tr>
+        <tr>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Notebook_icon.svg" alt="Notebook" height="100" width="120"></td>
+            <td>Notebook Set</td>
+            <td>₹150</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Header with background (simple inline style)</h2>
+    <table border="1" cellpadding="5">
+    <tr>
+        <thead style="background-color: #F6E7CB;">
+            <th>Reg No</th>
+            <th>Student Name</th>
+            <th>Department</th>
+            <th>Year</th>
+            <th>Section</th>
+        </thead>
+    </tr>
+    <tr>
+        <td>301</td>
+        <td>Vimal</td>
+        <td>Computer Science</td>
+        <td>2nd</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>302</td>
+        <td>Pooja</td>
+        <td>Information Technology</td>
+        <td>3rd</td>
+        <td>B</td>
+    </tr>
+    </table>
+    <hr>
+    <h2>Weekly Timetable (Mon - Sat)</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Day</th>
+            <th>9:00 - 10:00</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 12:00</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Maths</td>
+            <td>Physics</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>Computer</td>
+            <td>Chemistry</td>
+            <td>Biology</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>History</td>
+            <td>Geography</td>
+            <td>Maths</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Employee details (highlight highest salary using mark)</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Employee id</th>
+            <th>Department</th>
+            <th>Salary</th>
+        </tr>
+        <tr>
+            <td>401</td>
+            <td>Admin</td>
+            <td>$6000</td>
+        </tr>
+         <tr>
+            <td>402</td>
+            <td>Marketing</td>
+            <td><mark>$7000</mark></td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Countries and their flags (images changed)</h2>
+    <table border="1">
+        <tr>
+            <th>Country</th>
+            <th>Flag</th>
+        </tr>
+        <tr>
+            <td>India</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India Flag" height="80" width="140"></td>
+        </tr>
+        <tr>
+            <td>Canada</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canada Flag" height="80" width="140"></td>
+        </tr>
+        <tr>
+            <td>Japan</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" alt="Japan Flag" height="80" width="140"></td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Nested table example</h2>
+    <table border="1">
+        <tr>
+            <th>Person Name</th>
+            <th>Age</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Renu</td>
+            <td>29</td>
+            <td>
+                <table border="1">
+                    <tr><th>Address</th><th>City</th></tr>
+                    <tr><td>12B, Park Road</td><td>Chennai</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Order summary and total (manual)</h2>
+    <table border="1">
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>2</td>
+            <td>₹50</td>
+            <td>₹100</td>
+        </tr>
+        <tr>
+            <td>Pen</td>
+            <td>5</td>
+            <td>₹10</td>
+            <td>₹50</td>
+        </tr>
+        <tr>
+            <td colspan="3" align="right"><b>Final Total</b></td>
+            <td>₹150</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Comparison table using formatting tags</h2>
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>Phone A</th>
+            <th>Phone B</th>
+        </tr>
+        <tr>
+            <td><b>Brand</b></td>
+            <td><i>Realme</i></td>
+            <td><i>Samsung</i></td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Form (all basic input types)</h2>
+    <form action="success.html" method="GET">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name"><br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"><br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="number">Phone</label>
+        <input type="number" id="number" name="number"><br><br>
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date"><br><br>
+        <label for="file">Upload File</label>
+        <input type="file" id="file" name="file"><br><br>
+        <label>Languages</label><br>
+        <input type="checkbox" name="lang" value="english">English<br>
+        <input type="checkbox" name="lang" value="tamil">Tamil<br><br>
+        <label>Gender</label><br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="female">Female<br><br>
+        <label for="country">Country</label>
+        <select id="country" name="country">
+            <option value="">--Select a Country--</option>
+            <option value="india">India</option>
+            <option value="canada">Canada</option>
+            <option value="japan">Japan</option>
+        </select><br><br>
+        <label>Comments</label><br>
+        <textarea name="comments" rows="4" cols="40">Enter your comments here...</textarea><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <p>File saved as Task_Day_6.html</p>
+</body>
+</html>
