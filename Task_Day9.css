@@ -1,0 +1,11 @@
+.external-heading {
+    color: orange;
+    font-size: 32px;
+}
+
+.external-box {
+    padding: 10px;
+    background: lightblue;
+    color: darkblue;
+    width: 260px;
+}
