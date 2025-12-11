@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Day 10</title>
+
+    <style>
+        .internal-heading {
+            color: blue;
+            font-size: 30px;
+        }
+        p {
+            color: green;
+            font-size: 18px;
+        }
+
+        .c1 { color: red; font-size: 20px; }
+        .c2 { background: yellow; padding: 5px; }
+        .c3 { font-weight: bold; color: purple; }
+        .c4 { border: 2px solid black; padding: 5px; }
+        .c5 { background: lightblue; font-style: italic; }
+
+        input[type="text"] { border: 2px solid blue; }
+        input[type="email"] { border: 2px solid green; }
+        input[type="password"] { border: 2px solid red; }
+
+        #title { color: darkred; font-size: 28px; }
+        #note { color: brown; }
+        #footer { color: grey; }
+
+        h3, h4, h5 { color: orange; }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="color:red; font-size:35px;">Inline CSS Heading</h1>
+<h1 class="internal-heading">Internal CSS Heading</h1>
+<h1 class="external-heading">External CSS Heading</h1>
+
+<p>This is a paragraph using internal CSS.</p>
+<p>All paragraphs follow the same style.</p>
+
+<h2>About Me Page</h2>
+<div class="about-box">
+    <h3 style="color:purple;">Hello, I'm a Student</h3>
+    <p>I am learning inline, internal and external CSS.</p>
+</div>
+
+<h2>External CSS Only Section</h2>
+<div class="external-box">
+    This content is styled through external CSS only.
+</div>
+
+<h2>Five Classes Styled Differently</h2>
+<p class="c1">This is class 1</p>
+<p class="c2">This is class 2</p>
+<p class="c3">This is class 3</p>
+<p class="c4">This is class 4</p>
+<p class="c5">This is class 5</p>
+
+<h2>Form With Attribute Selectors</h2>
+<form>
+    <input type="text" placeholder="Enter name"><br><br>
+    <input type="email" placeholder="Enter email"><br><br>
+    <input type="password" placeholder="Enter password"><br><br>
+</form>
+
+<h2>Three Elements Styled Using IDs</h2>
+<h3 id="title">This is Title styled using ID</h3>
+<p id="note">This note uses ID styling.</p>
+<p id="footer">This footer text uses ID styling.</p>
+
+<h2>Group Selector Styling</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+
+</body>
+</html>
