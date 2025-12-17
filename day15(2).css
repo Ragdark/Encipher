@@ -1,0 +1,38 @@
+   body {
+    background: lightblue;
+    font-family: Arial;
+  }
+  .box{
+    width:350px;
+    margin:100px;
+    background: white;
+    padding:20px;
+    border-radius: 10px;
+  }
+  h2{
+    text-align: center;
+    color:lightblue;
+  }
+  input{
+    width: 65%;
+    padding:10px;
+  }
+  button{
+    padding:10px;
+    border-radius: 5px;
+  }
+  .add{
+    background: lightblue;
+  }
+  .task{
+    display:flex;
+    justify-content:space-between;
+    margin-top: 15px;
+  }
+  .check{
+    color: green;
+  }
+  .remove{
+    background:red;
+    color:white;
+  }
