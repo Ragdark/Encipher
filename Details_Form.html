@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fill Form</title>
+
+<style>
+body{
+ background:#12001c;
+ font-family:Verdana;
+}
+
+.main{
+ width:380px;
+ margin:50px auto;
+ background:#1c012b;
+ padding:18px;
+ border-radius:10px;
+ box-shadow:0px 0px 18px #7b2cbf;
+ color:#eee;
+}
+
+.head{
+ text-align:center;
+ font-size:22px;
+ color:#d6b3ff;
+ margin-bottom:15px;
+}
+
+.row{margin-bottom:10px;}
+
+.txt{
+ width:96%;
+ padding:8px;
+ border-radius:5px;
+ border:none;
+ background:#2a043f;
+ color:white;
+}
+
+.area{
+ width:96%;
+ height:60px;
+ resize:none;
+ padding:8px;
+ border-radius:5px;
+ background:#2a043f;
+ color:white;
+ border:none;
+}
+
+.drop{
+ width:100%;
+ padding:7px;
+ background:#2a043f;
+ color:white;
+ border:none;
+ border-radius:5px;
+}
+
+.grp{margin-top:5px;}
+
+.btn{
+ width:100%;
+ padding:11px;
+ margin-top:12px;
+ background:#a855f7;
+ border:none;
+ border-radius:5px;
+ color:white;
+ cursor:pointer;
+}
+
+.btn:hover{background:#7b2cbf;}
+
+table{
+ width:95%;
+ margin:25px auto;
+ border-collapse:collapse;
+ color:white;
+}
+
+th,td{
+ border:1px solid #777;
+ padding:6px;
+ text-align:center;
+}
+
+.action{
+ display:flex;
+ gap:6px;
+ justify-content:center;
+}
+
+.action button{
+ padding:5px 10px;
+ cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="head">FILL FORM</div>
+
+<div class="row">Username
+ <input class="txt" id="un">
+</div>
+
+<div class="row">Password
+ <input class="txt" type="password" id="pw">
+</div>
+
+<div class="row">Email
+ <input class="txt" id="em">
+</div>
+
+<div class="row">Date
+ <input class="txt" type="date" id="dt">
+</div>
+
+<div class="row">Gender
+ <div class="grp">
+  <input type="radio" name="g" value="Male"> Male
+  <input type="radio" name="g" value="Female"> Female
+ </div>
+</div>
+
+<div class="row">State
+ <select class="drop" id="dp">
+   <option>Select</option>
+   <option>Chennai</option>
+   <option>Coimbatore</option>
+   <option>Tirupur</option>
+   <option>Thiruvannamalai</option>
+   <option>Thirunelveli</option>
+ </select>
+</div>
+
+<div class="row">Address
+ <textarea class="area" id="ad"></textarea>
+</div>
+
+<button class="btn" onclick="save()">Submit</button>
+</div>
+
+<table id="tbl">
+<tr>
+ <th>Username</th>
+ <th>Password</th>
+ <th>Email</th>
+ <th>Date</th>
+ <th>Gender</th>
+ <th>State</th>
+ <th>Address</th>
+ <th>Action</th>
+</tr>
+</table>
+
+<script>
+var editPos = null;
+
+function save(){
+
+ var un=document.getElementById("un").value;
+ var pw=document.getElementById("pw").value;
+ var em=document.getElementById("em").value;
+ var dt=document.getElementById("dt").value;
+ var dp=document.getElementById("dp").value;
+ var ad=document.getElementById("ad").value;
+
+ var g=document.getElementsByName("g");
+ var gen="";
+ if(g[0].checked){gen=g[0].value;}
+ if(g[1].checked){gen=g[1].value;}
+
+ if(un=="" || pw=="" || em=="" || dt=="" || dp=="Select" || gen==""){
+   alert("Fill everything");
+   return;
+ }
+
+ var obj={un:un,pw:pw,em:em,dt:dt,gen:gen,dp:dp,ad:ad};
+
+ var list = JSON.parse(localStorage.getItem("myForm")) || [];
+
+ if(editPos !== null){
+   list[editPos] = obj;
+   editPos = null;
+ }else{
+   list.push(obj);
+ }
+
+ localStorage.setItem("myForm", JSON.stringify(list));
+ loadData();
+ clearForm();
+}
+
+function loadData(){
+ var tbl=document.getElementById("tbl");
+ tbl.innerHTML = `
+ <tr>
+  <th>Username</th>
+  <th>Password</th>
+  <th>Email</th>
+  <th>Date</th>
+  <th>Gender</th>
+  <th>State</th>
+  <th>Address</th>
+  <th>Action</th>
+ </tr>`;
+
+ var list = JSON.parse(localStorage.getItem("myForm")) || [];
+
+ for(var i=0;i<list.length;i++){
+   var r = tbl.insertRow();
+   r.insertCell(0).innerHTML = list[i].un;
+   r.insertCell(1).innerHTML = list[i].pw;
+   r.insertCell(2).innerHTML = list[i].em;
+   r.insertCell(3).innerHTML = list[i].dt;
+   r.insertCell(4).innerHTML = list[i].gen;
+   r.insertCell(5).innerHTML = list[i].dp;
+   r.insertCell(6).innerHTML = list[i].ad;
+   r.insertCell(7).innerHTML =
+   `<div class="action">
+     <button onclick="editData(${i})">Edit</button>
+     <button onclick="delData(${i})">Delete</button>
+    </div>`;
+ }
+}
+
+function editData(pos){
+ var list = JSON.parse(localStorage.getItem("myForm"));
+ var d = list[pos];
+
+ document.getElementById("un").value = d.un;
+ document.getElementById("pw").value = d.pw;
+ document.getElementById("em").value = d.em;
+ document.getElementById("dt").value = d.dt;
+ document.getElementById("dp").value = d.dp;
+ document.getElementById("ad").value = d.ad;
+
+ var g=document.getElementsByName("g");
+ if(g[0].value == d.gen){ g[0].checked = true; }
+ if(g[1].value == d.gen){ g[1].checked = true; }
+
+ editPos = pos;
+}
+
+function delData(pos){
+ if(confirm("Delete this record?")){
+   var list = JSON.parse(localStorage.getItem("myForm"));
+   list.splice(pos,1);
+   localStorage.setItem("myForm", JSON.stringify(list));
+   loadData();
+ }
+}
+
+function clearForm(){
+ document.getElementById("un").value="";
+ document.getElementById("pw").value="";
+ document.getElementById("em").value="";
+ document.getElementById("dt").value="";
+ document.getElementById("dp").value="Select";
+ document.getElementById("ad").value="";
+ var g=document.getElementsByName("g");
+ g[0].checked=false;
+ g[1].checked=false;
+}
+
+window.onload = loadData;
+</script>
+
+</body>
+</html>
