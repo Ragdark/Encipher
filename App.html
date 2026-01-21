@@ -1,0 +1,194 @@
+import './App.css';
+
+// t1
+function HelloText(){
+  return <h3>Hello..!</h3>
+}
+
+// t2
+function WelcomeText(){
+  return <h3>Welcome to react class</h3>
+}
+
+// t3
+function Heading({text}){
+  return <h2>{text}</h2>;
+}
+
+// t4
+function TwoLines(){
+  return(
+    <div>
+      <p>1st element</p>
+      <p>2nd element</p>
+    </div>
+  )
+}
+
+// t5
+function NameText(){
+  return <p>My name is user</p>
+}
+
+// t6
+function Greeting(){
+  const user = "User";
+  return <h3>Hello {user}</h3>;
+}
+
+// t7
+function Sum(){
+  return <h3>{10 + 20}</h3>
+}
+
+// t8
+function AdminUser(){
+  const isAdmin = true;
+  return <h3>{isAdmin && "Admin User"}</h3>;
+}
+
+// t9 & t16
+function UserName({name}){
+  return <p>User: {name}</p>
+}
+
+// t10
+function UserInfo({name, age}){
+  return <p>User: {name} | Age: {age}</p>
+}
+
+// t11
+function PageTitle({title}){
+  return <h1>{title}</h1>
+}
+
+// t12
+function AppButton({ label }) {
+  return <button>{label}</button>;
+}
+
+// t13
+function LoginInfo({isLoggedIn}){
+  return <h3>{isLoggedIn ? "Logged in" : "Logged out"}</h3>
+}
+
+// t14
+function UserDetails({ name, email }) {
+  return <h3>Name: {name} | Email: {email}</h3>;
+}
+
+// t15
+function SkillList({ skills }) {
+  return (
+    <ul>
+      {skills.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+// t17
+function InfoCard({ title, description }) {
+  return (
+    <div style={{ border: "1px solid blue", padding: "10px", margin: "10px" }}>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+// t18
+function FirstChild({ message }) {
+  return <p>Child One: {message}</p>;
+}
+
+function SecondChild({ message }) {
+  return <p>Child Two: {message}</p>;
+}
+
+function ParentBox() {
+  const msg = "Hello from Parent";
+
+  return (
+    <div>
+      <FirstChild message={msg} />
+      <SecondChild message={msg} />
+    </div>
+  );
+}
+
+// t19
+function ClickButton({ onClick }) {
+  return <button onClick={onClick}>Click Me</button>;
+}
+
+function ActionBox() {
+  function handleClick() {
+    alert("Button clicked from Child!");
+  }
+
+  return <ClickButton onClick={handleClick} />;
+}
+
+// t20
+function PageHeader({ text }) {
+  return <h1>{text}</h1>;
+}
+
+function PageContent({ text }) {
+  return <p>{text}</p>;
+}
+
+function PageFooter({ text }) {
+  return <footer>{text}</footer>;
+}
+
+// App Component
+function App(){
+  const message = "Data passed from App";
+
+  return(
+    <div>
+
+      <HelloText/>
+      <WelcomeText/>
+      <Heading text="Hello from Sera"/>
+      <TwoLines/>
+      <NameText/>
+      <Greeting/>
+      <Sum/>
+      <AdminUser/>
+
+      <UserName name="Sera"/>
+      <UserName name="Den"/>
+      <UserName name="Jade"/>
+
+      <UserInfo name="Sera" age={21}/>
+      <PageTitle title="React Js"/>
+
+      <AppButton label="Login" />
+      <AppButton label="Submit" />
+
+      <LoginInfo isLoggedIn={true} />
+      <LoginInfo isLoggedIn={false} />
+
+      <UserDetails name="Sera" email="sera@gmail.com"/>
+      <SkillList skills={["HTML", "CSS", "JavaScript", "React"]} />
+
+      <InfoCard title="React" description="UI Library" />
+      <InfoCard title="JavaScript" description="Programming Language" />
+      <InfoCard title="HTML" description="Markup Language" />
+
+      <ParentBox/>
+      <ActionBox/>
+
+      <PageHeader text={message} />
+      <PageContent text={message} />
+      <PageFooter text={message} />
+
+    </div>
+  )
+}
+
+export default App;
